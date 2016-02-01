@@ -1,7 +1,6 @@
 package com.base.io;
 
 public class TestIo {
-	
 	public int test1(){  
         int count = 1;  
         try{  
@@ -24,5 +23,5 @@ public int test2(){
 		TestIo t = new TestIo();
 		System.out.println(t.test1());
 		System.out.println(t.test2());
-	}
+}
 }
