@@ -88,6 +88,11 @@ public class UnBlockingNIOServer {
 		}
 	}
 	
+	/**
+	 * 读线程
+	 * @author haow
+	 *
+	 */
 	class ReadThread implements Runnable{
 		// Socket通道
 		private SocketChannel channel;
@@ -101,7 +106,7 @@ public class UnBlockingNIOServer {
 			ByteBuffer bb = ByteBuffer.allocate(8);
 			int len;
 			try {
-				len = channel.read(bb);
+				len = this.channel.read(bb);
 				bb.flip();
 				if (bb.hasArray() && len > 0) {
 					byte[] data = bb.array();
@@ -111,19 +116,24 @@ public class UnBlockingNIOServer {
 					// int newInterestOps = key.interestOps();
 					// newInterestOps |= SelectionKey.OP_WRITE;
 					// key.interestOps(newInterestOps);
-					
+					// 模拟请求服务返回数据给客户端.
 					ByteBuffer outBuffer = ByteBuffer.wrap(msg.getBytes());
-					channel.write(outBuffer);// 将消息回送给客户端
-				} else if (len == -1) {
-					System.out.println("no data");// 在这里不能忘记关闭channel
-					channel.close();
+					this.channel.write(outBuffer);// 将消息回送给客户端
+				} else if (len == -1) {// 在这里不能忘记关闭channel
+					System.out.println("no data");
+					this.channel.close();
 				}
-				
 			} catch (IOException e) {
 				e.printStackTrace();
 			} finally{
 				bb.clear();
 			}
+		}
+		
+		public void interestOps(){
+			 int newInterestOps = key.interestOps();
+			 newInterestOps |= SelectionKey.OP_WRITE;
+			 key.interestOps(newInterestOps);
 		}
 	}
 
