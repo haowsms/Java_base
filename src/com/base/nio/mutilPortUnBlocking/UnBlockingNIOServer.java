@@ -131,7 +131,7 @@ public class UnBlockingNIOServer {
 		}
 		
 		public void interestOps(){
-			 int newInterestOps = key.interestOps();
+			 int newInterestOps = channel.interestOps();
 			 newInterestOps |= SelectionKey.OP_WRITE;
 			 key.interestOps(newInterestOps);
 		}
@@ -144,6 +144,6 @@ public class UnBlockingNIOServer {
 	 */
 	public static void main(String[] args) throws IOException {
 		UnBlockingNIOServer server = new UnBlockingNIOServer();
-		server.initServer(new int[] { 8000, 8001 });
+		server.initServerSocketChannel();
 	}
 }
