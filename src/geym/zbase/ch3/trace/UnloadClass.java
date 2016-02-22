@@ -33,13 +33,13 @@ public class UnloadClass  implements Opcodes{
 		mw.visitEnd();
 		byte[] code = cw.toByteArray();
 
-		for(int i=0;i<10;i++){
+		for(int i=0;i<1000000;i++){
 			UnloadClassLoader loader = new UnloadClassLoader();
 			Method m=ClassLoader.class.getDeclaredMethod("defineClass", String.class,byte[].class,int.class,int.class);
 			m.setAccessible(true);
 			m.invoke(loader, "Example", code, 0, code.length);
 			m.setAccessible(false);
-			System.gc();
+//			System.gc();
 		}
 	}
 }

@@ -2,9 +2,9 @@
 package geym.zbase.ch3.heap.newsize;
 
 /**
- * -Xmx20m -Xms20m -Xmn1m   -XX:SurvivorRatio=2 -XX:+PrintGCDetails
- * -Xmx20m -Xms20m -Xmn7m   -XX:SurvivorRatio=2 -XX:+PrintGCDetails
- * -Xmx20m -Xms20m -Xmn15m  -XX:SurvivorRatio=8 -XX:+PrintGCDetails
+ * -Xmx20m -Xms20m -Xmn1m   -XX:SurvivorRatio=2 -XX:PermSize=10m -XX:MaxPermSize=10m -XX:+PrintGCDetails
+ * -Xmx20m -Xms20m -Xmn7m   -XX:SurvivorRatio=2 -XX:PermSize=10m -XX:MaxPermSize=10m -XX:+PrintGCDetails
+ * -Xmx20m -Xms20m -Xmn15m  -XX:SurvivorRatio=8 -XX:PermSize=10m -XX:MaxPermSize=10m -XX:+PrintGCDetails
  * 
  * -Xmx20M -Xms20M -XX:NewRatio=2  -XX:+PrintGCDetails
  * 
@@ -14,6 +14,6 @@ public class NewSizeDemo {
     public static void main(String[] args) {
        byte[] b=null;
        for(int i=0;i<10;i++)
-           b=new byte[1*1024*1024];
+           b=new byte[1*10];
     }
 }

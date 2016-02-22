@@ -15,7 +15,7 @@ public class HeapAlloc {
         System.out.println(Runtime.getRuntime().totalMemory()+" bytes");
         
         byte[] b=new byte[1*1024*1024];
-        System.out.println("·ÖÅäÁË1M¿Õ¼ä¸øÊı×é");
+        System.out.println("åˆ†é…äº†1Mç©ºé—´ç»™æ•°ç»„");
         
         System.out.print("maxMemory=");
         System.out.println(Runtime.getRuntime().maxMemory()+" bytes");
@@ -25,7 +25,7 @@ public class HeapAlloc {
         System.out.println(Runtime.getRuntime().totalMemory()+" bytes");
         
         b=new byte[4*1024*1024];
-        System.out.println("·ÖÅäÁË4M¿Õ¼ä¸øÊı×é");
+        System.out.println("åˆ†é…äº†4Mç©ºé—´ç»™æ•°ç»„");
         
         System.out.print("maxMemory=");
         System.out.println(Runtime.getRuntime().maxMemory()+" bytes");

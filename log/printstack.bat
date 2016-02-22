@@ -1,0 +1,1 @@
+D:/ProgramFiles/Java/jdk1.7.0_45/bin/jstack -F %1 > E:/archive_workspace/Java_base/log/a.txt
