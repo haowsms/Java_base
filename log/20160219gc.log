@@ -1,4 +1,4 @@
-0.126: Application time: 0.0279053 seconds
+0.126: Application time: 0.0279053 seconds s
 {Heap before GC invocations=1 (full 0):
  PSYoungGen      total 6656K, used 6144K [0x00000000ff900000, 0x0000000100000000, 0x0000000100000000)
   eden space 6144K, 100% used [0x00000000ff900000,0x00000000fff00000,0x00000000fff00000)
